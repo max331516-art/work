@@ -1,0 +1,163 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&family=Manrope:wght@600;700;800&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --background: 202 30% 95%;
+    --foreground: 210 25% 12%;
+
+    --card: 0 0% 100%;
+    --card-foreground: 210 25% 12%;
+
+    --popover: 0 0% 100%;
+    --popover-foreground: 210 25% 12%;
+
+    --primary: 200 85% 40%;
+    --primary-foreground: 0 0% 100%;
+
+    --secondary: 200 25% 93%;
+    --secondary-foreground: 200 30% 25%;
+
+    --muted: 200 20% 94%;
+    --muted-foreground: 210 12% 50%;
+
+    --accent: 200 85% 40%;
+    --accent-foreground: 0 0% 100%;
+
+    --destructive: 0 72% 51%;
+    --destructive-foreground: 0 0% 100%;
+
+    --success: 145 55% 35%;
+    --success-foreground: 0 0% 100%;
+    --success-light: 145 40% 93%;
+
+    --warning: 25 90% 50%;
+    --warning-foreground: 0 0% 100%;
+    --warning-light: 30 60% 95%;
+
+    --border: 205 25% 86%;
+    --input: 205 25% 86%;
+    --ring: 200 85% 40%;
+
+    --radius: 0.75rem;
+
+    --sidebar-background: 0 0% 98%;
+    --sidebar-foreground: 240 5.3% 26.1%;
+    --sidebar-primary: 240 5.9% 10%;
+    --sidebar-primary-foreground: 0 0% 98%;
+    --sidebar-accent: 240 4.8% 95.9%;
+    --sidebar-accent-foreground: 240 5.9% 10%;
+    --sidebar-border: 220 13% 91%;
+    --sidebar-ring: 217.2 91.2% 59.8%;
+
+    --font-display: 'Manrope', sans-serif;
+    --font-body: 'Inter', sans-serif;
+  }
+
+  .dark {
+    --background: 210 30% 10%;
+    --foreground: 210 20% 92%;
+    --card: 210 25% 14%;
+    --card-foreground: 210 20% 92%;
+    --popover: 210 25% 14%;
+    --popover-foreground: 210 20% 92%;
+    --primary: 200 80% 50%;
+    --primary-foreground: 0 0% 100%;
+    --secondary: 210 20% 20%;
+    --secondary-foreground: 210 20% 92%;
+    --muted: 210 20% 20%;
+    --muted-foreground: 210 15% 60%;
+    --accent: 200 80% 50%;
+    --accent-foreground: 0 0% 100%;
+    --destructive: 0 62.8% 30.6%;
+    --destructive-foreground: 210 40% 98%;
+    --success: 145 50% 45%;
+    --success-foreground: 0 0% 100%;
+    --success-light: 145 30% 15%;
+    --warning: 25 85% 55%;
+    --warning-foreground: 0 0% 100%;
+    --warning-light: 30 30% 15%;
+    --border: 210 20% 22%;
+    --input: 210 20% 22%;
+    --ring: 200 80% 50%;
+    --sidebar-background: 240 5.9% 10%;
+    --sidebar-foreground: 240 4.8% 95.9%;
+    --sidebar-primary: 224.3 76.3% 48%;
+    --sidebar-primary-foreground: 0 0% 100%;
+    --sidebar-accent: 240 3.7% 15.9%;
+    --sidebar-accent-foreground: 240 4.8% 95.9%;
+    --sidebar-border: 240 3.7% 15.9%;
+    --sidebar-ring: 217.2 91.2% 59.8%;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+
+  body {
+    @apply bg-background text-foreground;
+    font-family: var(--font-body);
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+}
+
+@layer utilities {
+  .font-display {
+    font-family: var(--font-display);
+  }
+}
+
+/* Custom animations */
+@keyframes fade-in-up {
+  from {
+    opacity: 0;
+    transform: translateY(16px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes scale-in {
+  0% {
+    transform: scale(0);
+    opacity: 0;
+  }
+  60% {
+    transform: scale(1.1);
+  }
+  100% {
+    transform: scale(1);
+    opacity: 1;
+  }
+}
+
+@keyframes slide-down {
+  from {
+    opacity: 0;
+    transform: translateY(-20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.animate-fade-in-up {
+  animation: fade-in-up 0.4s ease-out both;
+}
+
+.animate-scale-in {
+  animation: scale-in 0.5s cubic-bezier(0.34, 1.56, 0.64, 1) both;
+}
+
+.animate-slide-down {
+  animation: slide-down 0.5s ease-out both;
+}
